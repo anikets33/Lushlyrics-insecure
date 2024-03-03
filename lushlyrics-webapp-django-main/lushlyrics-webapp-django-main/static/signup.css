@@ -254,4 +254,9 @@
     white-space: nowrap;
     visibility: hidden;
   }
+
+  #message{
+    background-color: #84f8be;
+    text-align: center;
+  }
   
