@@ -33,7 +33,7 @@
 			{% csrf_token %}
 					{% if messages %}
 					<hr>
-						<div class="alert alert-primary" role="alert" id="messsage">
+						<div class="alert alert-primary" role="alert" style="text-align: center; background-color: aqua;">
 							{% for message in messages %}
 								{{ message }}
 							{% endfor %}
@@ -84,7 +84,7 @@
 	
 			  <footer class="form-footer">
 				  <div>
-					<a href="#" class="form-link">Forgot password?</a>
+					<a href="/recover/" class="form-link">Forgot password?</a>
 				  </div>
 				  <div>
 					Already have an account?
