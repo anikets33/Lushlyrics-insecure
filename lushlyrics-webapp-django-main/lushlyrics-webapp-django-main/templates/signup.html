@@ -33,7 +33,7 @@
 			{% csrf_token %}
 					{% if messages %}
 					<hr>
-						<div class="alert alert-primary" role="alert" style="text-align: center; background-color: aqua;">
+						<div class="alert alert-primary" role="alert" style="text-align: center; color: rgba(255, 0, 0, 0.9);">
 							{% for message in messages %}
 								{{ message }}
 							{% endfor %}

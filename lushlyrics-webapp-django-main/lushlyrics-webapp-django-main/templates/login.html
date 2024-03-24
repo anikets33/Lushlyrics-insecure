@@ -20,7 +20,7 @@
             {% csrf_token %}
             <h2 class="text-center">Log in</h2>
             {% if messages %}
-                <div class="alert alert-primary" role="alert">
+                <div class="alert alert-primary" role="alert" style="text-align: center; color: rgba(255, 0, 0, 0.9);"">
                     {% for message in messages %}
                         {{ message }}
                     {% endfor %}

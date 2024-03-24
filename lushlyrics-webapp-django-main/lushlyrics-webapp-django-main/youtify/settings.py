@@ -124,3 +124,11 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.mail.yahoo.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_TIMEOUT = 200
+EMAIL_HOST_USER = "anikets33@yahoo.in"
+EMAIL_HOST_PASSWORD = "nuujuftpsgtuycns"

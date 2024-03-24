@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate,login,logout
 from youtube_search import YoutubeSearch
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
+from .utils import send_reset_password_mail
 import json
 # import cardupdate
 
@@ -127,17 +127,23 @@ def recover_password(request):
     email = request.POST.get('email')
 
     if User.objects.filter(email=email).exists():
-      send_mail(
-        "Password Recovery Mail",
-        "Here is the message.",
-        "from@example.com",
-        ["to@example.com"],
-        fail_silently=False,
-      )
-      return render(request, 'recover_password.html')
+      user = User.objects.get(email=email)
+      send_reset_password_mail(user)
+      return redirect('/login/')
     else:
       messages.info(request, 'Email is not registered.')
       return redirect('/recover/')
   return render(request, 'recover_password.html')
   
-  
+def reset_password(request, id):
+   if request.method == 'POST':
+      password = request.POST.get('new_password')
+
+      user = User.objects.get(id=id)
+      user.set_password(password)
+      user.save(update_fields=["password"])
+
+      messages.success(request, 'Password changed. Please Login to continue.')
+      return redirect('/login/')
+   return render(request, 'reset_password.html')
+
