@@ -36,6 +36,10 @@ form{
 	padding:20px 0 0;
 }
 
+.form-group card-text{
+	align-content: center;
+}
+
 span{
 	font-size:14px;
 }

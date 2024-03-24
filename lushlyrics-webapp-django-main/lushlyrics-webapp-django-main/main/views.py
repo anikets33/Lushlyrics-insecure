@@ -124,17 +124,20 @@ def user_logout(request):
 
 def recover_password(request):
   if request.method == 'POST':
-      email = request.POST.get('email')
+    email = request.POST.get('email')
 
-  if not User.objects.filter(email=email).exists():
-    messages.info(request, 'Email is not registered.')
-    return redirect('/recover/')
-  
-  send_mail(
-    "Password Recovery Mail",
-    "Here is the message.",
-    "from@example.com",
-    ["to@example.com"],
-    fail_silently=False,
-  )
+    if User.objects.filter(email=email).exists():
+      send_mail(
+        "Password Recovery Mail",
+        "Here is the message.",
+        "from@example.com",
+        ["to@example.com"],
+        fail_silently=False,
+      )
+      return render(request, 'recover_password.html')
+    else:
+      messages.info(request, 'Email is not registered.')
+      return redirect('/recover/')
   return render(request, 'recover_password.html')
+  
+  
