@@ -39,3 +39,12 @@ form{
 span{
 	font-size:14px;
 }
+
+.form-link{
+	/* padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px; */
+	margin-bottom: 1rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
