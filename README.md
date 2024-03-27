@@ -17,6 +17,9 @@ Welcome to our project! This is a User Authentication application made in Python
 * CSS 
 * Bootstrap
 
+### Note 
+In order to receive reset password email, change the EMAIL settings [here](https://github.com/anikets33/Lushlyrics-insecure/blob/main/lushlyrics-webapp-django-main/lushlyrics-webapp-django-main/youtify/settings.py) as required.
+
 ## Setup
 
 The first thing to do is to clone the repository:
